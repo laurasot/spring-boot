@@ -1,0 +1,33 @@
+
+.contorno{
+	border: 3px solid black;
+}
+
+.targeta{
+	width: 220px;
+	height: 200px;
+	margin: 60px 50px ;
+}
+
+
+.alineardisplay{
+	display: inline-block;
+	text-align: center;
+}
+
+#actividades{
+	height: 300px;
+	overflow: scroll
+}
+#contador{
+	width: 110px;
+	text-align: center;
+}
+
+#actividad{
+	color:#72AB5A;
+}
+
+#yourgold{
+	width: 240px;
+}

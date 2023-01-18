@@ -1,0 +1,27 @@
+.ancho{
+	width: 570px;
+}
+
+.alinearDisplay{
+	display: inline-block;
+	vertical-align: top;
+}
+.alto{
+	height: 400px;
+}
+.paddingTop{
+	padding-top: 100px;
+}
+
+.padding{
+	padding: 15px 30px;
+}
+
+.alinearflex{
+	justify-content: center;
+	display: flex;
+}
+ 
+ .dezplamientoY{
+	 overflow-y: scroll;
+ }

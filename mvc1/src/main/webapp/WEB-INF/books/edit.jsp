@@ -1,0 +1,41 @@
+<%@ page isErrorPage="true" %>    
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>HTML</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/edit.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <h1>Edit Book</h1>
+    <form:form action="/books/${book.id}" method="post" modelAttribute="book">
+        <input type="hidden" name="_method" value="put">
+        <p>
+            <form:label path="title">Title</form:label>
+            <form:errors path="title"/>
+            <form:input path="title"/>
+        </p>
+        <p>
+            <form:label path="description">Description</form:label>
+            <form:errors path="description"/>
+            <form:textarea path="description"/>
+        </p>
+        <p>
+            <form:label path="language">Language</form:label>
+            <form:errors path="language"/>
+            <form:input path="language"/>
+        </p>
+        <p>
+            <form:label path="numberOfPages">Pages</form:label>
+            <form:errors path="numberOfPages"/>     
+            <form:input type="number" path="numberOfPages"/>
+        </p>    
+        <input type="submit" value="Submit"/>
+    </form:form>
+</body>
+</html>
