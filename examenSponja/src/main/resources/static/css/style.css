@@ -1,0 +1,28 @@
+.ancho{
+	width: 900px;
+}
+.alinearDisplay{
+	display: inline-block;
+	vertical-align: top;
+}
+.alto{
+	height: 400px;
+}
+.paddingTop{
+	padding-top: 100px;
+}
+
+.padding{
+	padding: 15px 30px;
+}
+
+.alinearflex{
+	justify-content: center;
+	display: flex;
+}
+
+#comentarios{
+	width: 500px;
+	overflow-y: scroll;
+	height: 300px;
+}
