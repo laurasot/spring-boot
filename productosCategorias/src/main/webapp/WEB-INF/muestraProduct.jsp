@@ -28,6 +28,7 @@
             <li><c:out value="${categoriaSuya.name}"/></li>
         </c:forEach>  
     </div> 
+    
     <form class="alinearDisplay ancho mt-5 ms-5" method="POST" action="/products/${productoAEditar.id}">
         <select class="form-select"  name="categoria">
                 <c:forEach items="${categoriasNoProduct}" var="categoria">

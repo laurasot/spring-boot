@@ -35,31 +35,31 @@ public class CategoryControlador {
 			return "/creaCategory";
 		}
 		
-		 @RequestMapping(value="/new", method=RequestMethod.POST)
-		 public String crearCategory(@Valid @ModelAttribute("category") Category category, BindingResult result) {
-		     if (result.hasErrors()) {
-		         return "/";
-		     } else {
-		         categoryServicio.creaCategory(category);
-		         return "redirect:/categories/"+category.getId();
-		     }
-		 }
-		 
-		 @GetMapping("/categories/{idC}")
-		 public String muestraCategorias(Model model, @PathVariable("idC") Long idC){
-			 Category categoriaSetearProducto = categoryServicio.buscaCategory(idC);
-			 model.addAttribute("categoriaSetearProducto", categoriaSetearProducto);
-			 List<Product> productsNoCategory = productServicio.muestraProductNoContenganCategory(categoriaSetearProducto);
-			 model.addAttribute("productsNoCategory", productsNoCategory);
-			 return "muestraCategory";
-		 }
-		 
-		 @PostMapping("/categories/{idC}")
-		 public String agregarCategory(@PathVariable("idC") Long idC,  Model model, @RequestParam("producto") Long idP){
-		         Category categoria = categoryServicio.buscaCategory(idC);
-		         Product producto = productServicio.buscaProduct(idP);
-		         categoria.setProducts(producto);
-		         categoryServicio.creaCategory(categoria);
-		         return "redirect:/categories/{idC}";
-		 }
+		@RequestMapping(value="/new", method=RequestMethod.POST)
+		public String crearCategory(@Valid @ModelAttribute("category") Category category, BindingResult result) {
+		    if (result.hasErrors()) {
+		        return "/";
+		    } else {
+		        categoryServicio.creaCategory(category);
+		    	return "redirect:/categories/"+category.getId();
+		    }
+		}
+	
+		@GetMapping("/categories/{idC}")
+		public String muestraCategorias(Model model, @PathVariable("idC") Long idC){
+			Category categoriaSetearProducto = categoryServicio.buscaCategory(idC);
+			model.addAttribute("categoriaSetearProducto", categoriaSetearProducto);
+			List<Product> productsNoCategory = productServicio.muestraProductNoContenganCategory(categoriaSetearProducto);
+			model.addAttribute("productsNoCategory", productsNoCategory);
+			return "muestraCategory";
+		}
+		
+		@PostMapping("/categories/{idC}")
+		public String agregarCategory(@PathVariable("idC") Long idC,  Model model, @RequestParam("producto") Long idP){
+		    Category categoria = categoryServicio.buscaCategory(idC);
+		    Product producto = productServicio.buscaProduct(idP);
+		    categoria.setProducts(producto);
+		    categoryServicio.creaCategory(categoria);
+		    return "redirect:/categories/{idC}";
+		}
 }
